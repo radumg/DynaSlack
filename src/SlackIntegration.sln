@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26014.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slackamo", "Slack\Slackamo.csproj", "{1A8FF892-E81A-4261-AAA0-43713D980C26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugApp", "DebugApp\DebugApp.csproj", "{BE042BA4-0A61-46DB-A66F-537E28FE7D13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A8FF892-E81A-4261-AAA0-43713D980C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A8FF892-E81A-4261-AAA0-43713D980C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE042BA4-0A61-46DB-A66F-537E28FE7D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE042BA4-0A61-46DB-A66F-537E28FE7D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
