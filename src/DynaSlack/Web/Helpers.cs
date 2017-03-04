@@ -82,7 +82,7 @@ namespace Web
     /// <summary>
     /// Utility functions that are used for validation and other auxiliary tasks
     /// </summary>
-    class Helpers
+    public class Helpers
     {
         /// <summary>Check the URI is valid</summary>
         /// <param name="uriToCheck">The URI to check</param>

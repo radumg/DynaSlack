@@ -96,7 +96,7 @@
             Create a webhook for use with Slack.
             </summary>
             <param name="Url">The URL to send data to</param>
-            <param name="Channel">The Slack channel to post to</param>
+            <param name="Channel">The Slack channel to post to, defaults to #general</param>
             <param name="User">The name of the user to post as</param>
             <param name="EmojiIcon">The emoji to use as icon. Uses Slack syntax, like :ghost: or :rocket:</param>
             <param name="UrlIcon">An URL to an image to use as the icon.</param>
@@ -134,11 +134,12 @@
             Slack clients represent a single connection to a Slack team, with all associated properties and methods.
             </summary>
         </member>
-        <member name="M:Slack.Client.#ctor(System.String)">
+        <member name="M:Slack.Client.#ctor(System.String,Slack.Webhook)">
             <summary>
             Slack client constructor
             </summary>
             <param name="token">Optional OAuth token. If not supplied or invalid, posting will only be available as bots or webhooks.</param>
+            <param name="webhook">Optional webhook override. If supplied, this will be used instead of OAuth webhook.</param>
         </member>
         <member name="M:Slack.Client.PostWebhookMessage(System.String,System.String)">
             <summary>

@@ -19,7 +19,8 @@ namespace Slack
         /// Slack client constructor
         /// </summary>
         /// <param name="token">Optional OAuth token. If not supplied or invalid, posting will only be available as bots or webhooks.</param>
-        public Client(string token = null)
+        /// <param name="webhook">Optional webhook override. If supplied, this will be used instead of OAuth webhook.</param>
+        public Client(string token = null, Webhook webhook=null)
         {
             if (!CheckToken(token)) this.token = null;
             else
@@ -27,6 +28,8 @@ namespace Slack
                 this.token = token;
                 // TODO : implement Slack's /api/check/ endpoint to test token is actually valid
             }
+            // check if there is an override on the webhook
+            if (webhook != null) this.webhook = webhook;
         }
 
         /// <summary>

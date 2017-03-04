@@ -89,11 +89,11 @@ namespace Slack
         /// Create a webhook for use with Slack.
         /// </summary>
         /// <param name="Url">The URL to send data to</param>
-        /// <param name="Channel">The Slack channel to post to</param>
+        /// <param name="Channel">The Slack channel to post to, defaults to #general</param>
         /// <param name="User">The name of the user to post as</param>
         /// <param name="EmojiIcon">The emoji to use as icon. Uses Slack syntax, like :ghost: or :rocket:</param>
         /// <param name="UrlIcon">An URL to an image to use as the icon.</param>
-        public Webhook(string Url, string Channel, string User = null, string EmojiIcon = null, string UrlIcon = null)
+        public Webhook(string Url, string Channel="general", string User = "DynaSlack", string EmojiIcon = null, string UrlIcon = null)
         {
             // check URL
             if (!String.IsNullOrEmpty(Url) && Web.Helpers.checkURI(new Uri(Url))) this.url = Url;
@@ -119,7 +119,7 @@ namespace Slack
         {
             // TODO : implement & refactor using webhook posting factory
             // perform checks before encoding objects
-            if (String.IsNullOrEmpty(text)) return null;
+            if (String.IsNullOrEmpty(text)) throw new Exception("Message text cannot be empty!");
 
             // build payload
             SlackPayload payload = new SlackPayload();
@@ -135,10 +135,10 @@ namespace Slack
 
             // validate response
             if (String.IsNullOrEmpty(response)) throw new Exception("Slack servers returned an error.");
-            if (response.Trim().Contains("<html")) throw new Exception("Slack returned an error : please check the webhook URL.");
+            if (response.Trim().Contains("<html")) throw new Exception("Slack could not process the request : please check the webhook URL.");
 
             // POST the message and return the server response
-            return Web.Request.POST(this.url, jsonPayload);
+            return response;
 
             // TODO : deserialise server response to the SlackResponse class instead of returning string
             // var serialiser = new Newtonsoft.Json.JsonSerializer();
