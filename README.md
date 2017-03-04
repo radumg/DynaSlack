@@ -46,13 +46,15 @@ Please remember to fill in your own webhook URL, the one used in the samples has
 
 ## Client
 This subcategory implements a client for access to a Slack team. It's current functionality is limited but planned updates will include support for OAuth and implicitly, multiple teams, bots and more.
+
 ![client](https://cloud.githubusercontent.com/assets/11439624/23580535/b260cea2-00fb-11e7-8def-5cfc85005761.PNG)
+
 Please note the OAuth flow is currently in development, so I suggest using the Webhook functionality instead until an update is released.
 
 ### Client node
 This node creates a new Slack client. It takes in only 1 input :
 ```
-*token* - an OAuth token.
+1. token - an OAuth token.
 
 An empty string will suffice as input if you don't have a token laying around the house.
 ```
@@ -60,9 +62,13 @@ An empty string will suffice as input if you don't have a token laying around th
 ### PostWebhookMessage node
 This node will post a message to a Slack channel through a webhook, provided the following inputs :
 ```
-- *SlackClient* : a Slack client with a valid token that has a webhook configured
-- *text* : the text to post as a message, supports all Slack formatting
-- *emoji* : the emoji to use as the message image, as per Slack syntax ( :rocket: for example)
+1. SlackClient : a Slack client with a valid token that has a webhook configured
+```
+```
+2. text : the text to post as a message, supports all Slack formatting
+```
+```
+3. emoji : the emoji to use as the message image, as per Slack syntax ( :rocket: for example)
 ```
 
 ### Query nodes
@@ -70,23 +76,35 @@ The query nodes, marked with `?` in Dynamo allow you to see the properties of a 
 
 ## Webhooks
 This subcategory allows the creation of a new Slack IncomingWebhook, which allows data to be sent to Slack
+
 ![webhook](https://cloud.githubusercontent.com/assets/11439624/23580538/c75e2610-00fb-11e7-8456-ba3cc9d7d972.PNG)
 
 ### Webhook node
 This node creates a new Webhok. It takes in a few inputs :
 ```
-- *URL* : the Slack URL to post to, in the form of `https://hooks.slack.com/services/{teamID}/B4AHCV22F/...`
-- *Channel* : the channel to post the message to, note that a valid existing channel's name is required otherwise sending messages will fail
-- *User* : the name of the integration, equivalent to a user's name and displayed as message author
-- *EmojiIcon* : the emoji to use as the message image, as per Slack syntax ( :rocket: for example)
-- *UrlIcon* : a URL to an image to use as the message image. An image is used as icon only when the emoji input is invalid or an empty string. Requires the URL to an image hosted on the internet.
+1. URL : the Slack URL to post to, in the form of 
+https://hooks.slack.com/services/{teamID}/B4AHCV22F/...
+```
+```
+2. Channel : the channel to post the message to, note that a valid existing channel's name is required otherwise sending messages will fail
+```
+```
+3. User : the name of the integration, equivalent to a user's name and displayed as message author
+```
+```
+4. EmojiIcon : the emoji to use as the message image, as per Slack syntax ( :rocket: for example)
+```
+```
+5. UrlIcon : a URL to an image to use as the message image. An image is used as icon only when the emoji input is invalid or an empty string. Requires the URL to an image hosted on the internet.
 ```
 
 ### Post node
 This node is the one that actually posts the message to Slack. It requires 2 inputs :
 ```
-- *Webhook* : a pre-configure webhook, see node above
-- *text* : the text to post as a message, supports all Slack formatting
+1. Webhook : a pre-configure webhook, see node above
+```
+```
+2. text : the text to post as a message, supports all Slack formatting
 ```
 
 ### Query nodes
@@ -153,9 +171,7 @@ The versioning for this project is `X.Y.Z` where
 
 ## Authors
 
-* **Radu Gidei**
-[Github profile](https://github.com/radumg)
-[Twitter profile](https://twitter.com/radugidei)
+* **Radu Gidei** : [Github profile](https://github.com/radumg), [Twitter profile](https://twitter.com/radugidei)
 
 See also the list of [contributors](https://github.com/radumg/DynaSlack/contributors) who participated in this project.
 
