@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DynaSlack</name>
+    </assembly>
+    <members>
+        <member name="T:DynaSlack.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:DynaSlack.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:DynaSlack.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:DynaSlack.Properties.Resources.add_to_slack">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:DynaSlack.Properties.Resources.slack">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:DynaSlack.Web.Request">
+            <summary>
+            Utility class used to construct a web request and send it
+            </summary>
+        </member>
+        <member name="M:DynaSlack.Web.Request.POST(System.String,System.String)">
+            <summary>
+            Utility function to send a POST request to a URL using a "payload" request parameter
+            </summary>
+            <param name="url">The string URL to send request to</param>
+            <param name="jsonPayload">The POST data to send in JSON format</param>
+            <returns>The server response as a string</returns>
+        </member>
+        <member name="T:DynaSlack.Web.Response">
+            <summary>
+            Class that Slack's web responses deserialize to
+            </summary>
+        </member>
+        <member name="T:DynaSlack.Web.Helpers">
+            <summary>
+            Utility functions that are used for validation and other auxiliary tasks
+            </summary>
+        </member>
+        <member name="M:DynaSlack.Web.Helpers.checkURI(System.Uri)">
+            <summary>Check the URI is valid</summary>
+            <param name="uriToCheck">The URI to check</param>
+            <returns>True if is valid, False otherwise</returns>
+        </member>
+        <member name="T:DynaSlack.Slack.Message">
+            <summary>
+            Class represents a Slack message.
+            </summary>
+        </member>
+        <member name="M:DynaSlack.Slack.Message.#ctor(System.String)">
+            <summary>
+            Construct a Slack message given a text and an optional attachment
+            </summary>
+            <param name="Text">The text to be sent as a Slack message</param>
+        </member>
+        <member name="M:DynaSlack.Slack.Message.ToJSON">
+            <summary>
+            Serializes the Slack message to JSON
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DynaSlack.Slack.Message.Post(DynaSlack.Slack.Client)">
+            <summary>
+            Posts the message to Slack on behalf of the Slack Client's user. Requires a valid OAuth token in Client.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DynaSlack.Slack.Bot">
+            <summary>
+            Class represents a Bot object in Slack.
+            </summary>
+        </member>
+        <member name="T:DynaSlack.Slack.IncomingWebhook">
+            <summary>
+            Class represents an Incoming Webhook connection in Slack
+            </summary>
+        </member>
+        <member name="M:DynaSlack.Slack.IncomingWebhook.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Webhook class constructor
+            </summary>
+            <param name="Url">The URL to send data to</param>
+            <param name="Channel">The Slack channel to post to</param>
+            <param name="User">The name of the user to post as</param>
+        </member>
+        <member name="M:DynaSlack.Slack.IncomingWebhook.Post(System.String,System.String,System.String)">
+            <summary>
+            Post a message using webhooks
+            </summary>
+            <param name="webhook">Specify a webhook object to use. If nothing is supplied, it defaults to the Client's webhook.</param>
+            <param name="text">The text to send</param>
+            <param name="emoji">The emoji to use as image. Uses Slack syntax, example :ghost: </param>
+            <param name="icon">URL to an image to use as image. If an emoji is specified, this is disregarded.</param>
+            <returns>The message JSON payload</returns>
+        </member>
+        <member name="T:DynaSlack.Slack.Attachment">
+            <summary>
+            Represents attachments in Slack messages, which are used to send richly formatted messages.
+            </summary>
+        </member>
+        <member name="M:DynaSlack.Slack.Attachment.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Create a Slack message attachment, which are used to send richly formatted messages.
+            </summary>
+        </member>
+        <member name="T:DynaSlack.Slack.Field">
+            <summary>
+            Represents individual fields which form attachments in Slack messages.
+            </summary>
+        </member>
+        <member name="T:DynaSlack.Slack.SlackPayload">
+            <summary>
+            This class serializes to JSON the payload required by Slack Incoming WebHooks
+            </summary>
+        </member>
+        <member name="T:DynaSlack.Slack.Client">
+            <summary>
+            Slack clients represent a single connection to a Slack team, with all associated properties and methods.
+            </summary>
+        </member>
+        <member name="M:DynaSlack.Slack.Client.#ctor(System.String)">
+            <summary>
+            Slack client constructor
+            </summary>
+            <param name="token">Optional OAuth token. If not supplied or invalid, posting will only be available as bots or webhooks.</param>
+        </member>
+        <member name="M:DynaSlack.Slack.Client.PostWebhookMessage(System.String,System.String)">
+            <summary>
+            Post a message using the client webhook
+            </summary>
+            <param name="text">The text to send</param>
+            <param name="emoji">The emoji to use as image. Uses Slack syntax, example :ghost: </param>
+            <returns>The message JSON payload</returns>
+        </member>
+        <member name="M:DynaSlack.Slack.Client.CheckToken(System.String)">
+            <summary>
+            Checks whether an OAuth token is valid
+            </summary>
+            <param name="token">The token to check</param>
+            <returns>True if token is valid and false otherwise</returns>
+        </member>
+    </members>
+</doc>

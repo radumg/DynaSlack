@@ -1,0 +1,11 @@
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DebugApp\obj\Debug\DynaSlack.DebugApp.csprojResolveAssemblyReference.cache
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DebugApp\bin\Debug\DebugApp.exe.config
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DebugApp\bin\Debug\DebugApp.exe
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DebugApp\bin\Debug\DebugApp.pdb
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DebugApp\bin\Debug\DynaSlack.dll
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DebugApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DebugApp\bin\Debug\DynaSlack.pdb
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DebugApp\bin\Debug\DynaSlack.xml
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DebugApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DebugApp\obj\Debug\DebugApp.exe
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DebugApp\obj\Debug\DebugApp.pdb

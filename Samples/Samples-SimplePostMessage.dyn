@@ -1,0 +1,60 @@
+<Workspace Version="1.2.1.3083" X="36.0705685811995" Y="-265.951502383248" zoom="0.711659321851967" Name="Home" Description="" RunType="Manual" RunPeriod="1000" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="DSCore.DateTime.Now" resolvedName="DSCore.DateTime" assemblyName="DSCoreNodes.dll" />
+    <ClassMap partialName="DSCore.DateTime" resolvedName="DSCore.DateTime" assemblyName="DSCoreNodes.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <CoreNodeModels.Input.StringInput guid="6715016e-20ee-4625-ac3b-ecea7b663e4b" type="CoreNodeModels.Input.StringInput" nickname="String" x="166.984468341559" y="838.879242284931" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>apitestground</System.String>
+      <System.String value="apitestground" />
+    </CoreNodeModels.Input.StringInput>
+    <CoreNodeModels.Input.StringInput guid="6b78bc72-9994-4071-aa24-c6ca2b1cde39" type="CoreNodeModels.Input.StringInput" nickname="String" x="166.984468341559" y="896.633740903762" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>DynaSlack Bot</System.String>
+      <System.String value="DynaSlack Bot" />
+    </CoreNodeModels.Input.StringInput>
+    <CoreNodeModels.Input.StringInput guid="f4afac86-c068-4853-8f27-b8a57e9f0e39" type="CoreNodeModels.Input.StringInput" nickname="String" x="627.646418619494" y="1045.08982492768" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>:robot_face:</System.String>
+      <System.String value=":robot_face:" />
+    </CoreNodeModels.Input.StringInput>
+    <CoreNodeModels.Watch guid="f26eb4e5-c764-46ed-b46b-143d9069ef26" type="CoreNodeModels.Watch" nickname="Watch" x="1105.31518009701" y="979.611154716549" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+    </CoreNodeModels.Watch>
+    <CoreNodeModels.Input.StringInput guid="e58816ac-5339-4fd0-afa4-5beab9e8a35f" type="CoreNodeModels.Input.StringInput" nickname="String" x="166.984468341559" y="756.124743666099" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>https://hooks.slack.com/services/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 </System.String>
+      <System.String value="https://hooks.slack.com/services/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 " />
+    </CoreNodeModels.Input.StringInput>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="bb5cc469-f543-424a-8729-429cbb15a02d" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="IncomingWebhook.IncomingWebhook" x="468.696365942791" y="819.798729662113" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="..\src\DynaSlack\Compiled\DynaSlack.dll" function="DynaSlack.Slack.IncomingWebhook.IncomingWebhook@string,string,string">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <PortInfo index="2" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="49121a83-cd6e-4823-8416-3e6718ccda6d" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="IncomingWebhook.Post" x="816.000131598869" y="950.332968114482" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="..\src\DynaSlack\Compiled\DynaSlack.dll" function="DynaSlack.Slack.IncomingWebhook.Post@string,string,string">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <PortInfo index="2" default="False" />
+      <PortInfo index="3" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <CoreNodeModels.Input.StringInput guid="84e48bb4-586d-48e4-a51e-c391d761bccc" type="CoreNodeModels.Input.StringInput" nickname="String" x="565.041272478053" y="984.761062803149" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>Dynamo, I am your bot.</System.String>
+      <System.String value="Dynamo, I am your bot." />
+    </CoreNodeModels.Input.StringInput>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="6715016e-20ee-4625-ac3b-ecea7b663e4b" start_index="0" end="bb5cc469-f543-424a-8729-429cbb15a02d" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="6b78bc72-9994-4071-aa24-c6ca2b1cde39" start_index="0" end="bb5cc469-f543-424a-8729-429cbb15a02d" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="f4afac86-c068-4853-8f27-b8a57e9f0e39" start_index="0" end="49121a83-cd6e-4823-8416-3e6718ccda6d" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="f4afac86-c068-4853-8f27-b8a57e9f0e39" start_index="0" end="49121a83-cd6e-4823-8416-3e6718ccda6d" end_index="3" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="e58816ac-5339-4fd0-afa4-5beab9e8a35f" start_index="0" end="bb5cc469-f543-424a-8729-429cbb15a02d" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="bb5cc469-f543-424a-8729-429cbb15a02d" start_index="0" end="49121a83-cd6e-4823-8416-3e6718ccda6d" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="49121a83-cd6e-4823-8416-3e6718ccda6d" start_index="0" end="f26eb4e5-c764-46ed-b46b-143d9069ef26" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="84e48bb4-586d-48e4-a51e-c391d761bccc" start_index="0" end="49121a83-cd6e-4823-8416-3e6718ccda6d" end_index="1" portType="0" />
+  </Connectors>
+  <Notes>
+    <Dynamo.Graph.Notes.NoteModel guid="a6e69d26-1cdd-44ef-9df4-bf890f7f026a" text="Paste here the Slack webhook URL.&#xD;&#xA;Visit this site first to set one up :&#xD;&#xA;https://my.slack.com/services/new/incoming-webhook/" x="166.984468341559" y="673.870245047268" />
+  </Notes>
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>

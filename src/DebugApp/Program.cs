@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Slack;
+using DynaSlack.Slack;
 
-namespace DebugApp
+/// <summary>
+/// Namespace used to host classes and methods used during debugging only, in the absence of proper unit tests
+/// Set the solution default startup to this project to enable quick debugging in Visual Studio.
+/// </summary>
+namespace DynaSlack.DebugApp
 {
     class Program
     {
@@ -17,7 +17,8 @@ namespace DebugApp
                 "apitestground");
 
             // build a new Slack client object
-            var slackClient = new Slack.SlackClient(webhook);
+            var slackClient = new DynaSlack.Slack.Client();
+            slackClient.webhook = webhook;
 
             // read a line from the console
             Console.WriteLine("Please enter a line of text to send to Slack : " + Environment.NewLine);
