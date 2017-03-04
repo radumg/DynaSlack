@@ -1,0 +1,68 @@
+<Workspace Version="1.2.1.3083" X="-59.4851372574335" Y="-140.510179863626" zoom="0.551181102362205" Name="Home" Description="" RunType="Manual" RunPeriod="1000" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="DSCore.DateTime.Now" resolvedName="DSCore.DateTime" assemblyName="DSCoreNodes.dll" />
+    <ClassMap partialName="DSCore.DateTime" resolvedName="DSCore.DateTime" assemblyName="DSCoreNodes.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <CoreNodeModels.Input.StringInput guid="6715016e-20ee-4625-ac3b-ecea7b663e4b" type="CoreNodeModels.Input.StringInput" nickname="String" x="162.351606167058" y="925.297040609721" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>apitestground</System.String>
+      <System.String value="apitestground" />
+    </CoreNodeModels.Input.StringInput>
+    <CoreNodeModels.Input.StringInput guid="6b78bc72-9994-4071-aa24-c6ca2b1cde39" type="CoreNodeModels.Input.StringInput" nickname="String" x="162.351606167058" y="1092.29704060972" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>DynaSlack</System.String>
+      <System.String value="DynaSlack" />
+    </CoreNodeModels.Input.StringInput>
+    <CoreNodeModels.Input.StringInput guid="f4afac86-c068-4853-8f27-b8a57e9f0e39" type="CoreNodeModels.Input.StringInput" nickname="String" x="162.351606167058" y="1243.29704060972" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>
+      </System.String>
+      <System.String value="" />
+    </CoreNodeModels.Input.StringInput>
+    <CoreNodeModels.Watch guid="f26eb4e5-c764-46ed-b46b-143d9069ef26" type="CoreNodeModels.Watch" nickname="Watch" x="1340.35160616706" y="1073.29704060972" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+    </CoreNodeModels.Watch>
+    <CoreNodeModels.Input.StringInput guid="e58816ac-5339-4fd0-afa4-5beab9e8a35f" type="CoreNodeModels.Input.StringInput" nickname="String" x="162.351606167058" y="749.297040609721" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>https://hooks.slack.com/services/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 </System.String>
+      <System.String value="https://hooks.slack.com/services/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 " />
+    </CoreNodeModels.Input.StringInput>
+    <CoreNodeModels.Input.StringInput guid="84e48bb4-586d-48e4-a51e-c391d761bccc" type="CoreNodeModels.Input.StringInput" nickname="String" x="556.851606167058" y="1212.29704060972" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>Hello Slack, I'm your new best friend, DynaSlack.</System.String>
+      <System.String value="Hello Slack, I'm your new best friend, DynaSlack." />
+    </CoreNodeModels.Input.StringInput>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="5e1e3972-74d3-4e54-a066-3b5ede988838" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Webhook.Webhook" x="556.851606167058" y="960.297040609721" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="..\..\..\..\AppData\Roaming\Dynamo\Dynamo%20Core\1.2\packages\DynaSlack\bin\DynaSlack.dll" function="Slack.Webhook.Webhook@string,string,string,string,string">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <PortInfo index="2" default="False" />
+      <PortInfo index="3" default="False" />
+      <PortInfo index="4" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="f822d37d-c5e0-4f86-a65a-054dd097f821" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Webhook.Post" x="947.351606167058" y="1073.29704060972" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="..\..\..\..\AppData\Roaming\Dynamo\Dynamo%20Core\1.2\packages\DynaSlack\bin\DynaSlack.dll" function="Slack.Webhook.Post@string">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="6715016e-20ee-4625-ac3b-ecea7b663e4b" start_index="0" end="5e1e3972-74d3-4e54-a066-3b5ede988838" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="6b78bc72-9994-4071-aa24-c6ca2b1cde39" start_index="0" end="5e1e3972-74d3-4e54-a066-3b5ede988838" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="f4afac86-c068-4853-8f27-b8a57e9f0e39" start_index="0" end="5e1e3972-74d3-4e54-a066-3b5ede988838" end_index="3" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="f4afac86-c068-4853-8f27-b8a57e9f0e39" start_index="0" end="5e1e3972-74d3-4e54-a066-3b5ede988838" end_index="4" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="e58816ac-5339-4fd0-afa4-5beab9e8a35f" start_index="0" end="5e1e3972-74d3-4e54-a066-3b5ede988838" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="84e48bb4-586d-48e4-a51e-c391d761bccc" start_index="0" end="f822d37d-c5e0-4f86-a65a-054dd097f821" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="5e1e3972-74d3-4e54-a066-3b5ede988838" start_index="0" end="f822d37d-c5e0-4f86-a65a-054dd097f821" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="f822d37d-c5e0-4f86-a65a-054dd097f821" start_index="0" end="f26eb4e5-c764-46ed-b46b-143d9069ef26" end_index="0" portType="0" />
+  </Connectors>
+  <Notes>
+    <Dynamo.Graph.Notes.NoteModel guid="a6e69d26-1cdd-44ef-9df4-bf890f7f026a" text="Paste here the Slack webhook URL.&#xD;&#xA;Visit this site first to set one up :&#xD;&#xA;https://my.slack.com/services/new/incoming-webhook/" x="162.351606167058" y="666.797040609721" />
+    <Dynamo.Graph.Notes.NoteModel guid="23f20987-d81a-4ca1-bed7-e2f428d29d34" text="Enter the name of the Slack channel to post to, for example : #general.&#xD;&#xA;If # is missing, it will add it for you." x="162.351606167058" y="857.297040609721" />
+    <Dynamo.Graph.Notes.NoteModel guid="a4cb2689-5ad5-46ee-9314-dca7299eb63e" text="The name of the Webhook, displayed as if it's a person's name.&#xD;&#xA;Note : for consecutive posts, icon only refreshes when the name changes." x="162.351606167058" y="1009.79704060972" />
+    <Dynamo.Graph.Notes.NoteModel guid="60acf385-eb3c-4006-8b03-b8068dd29dc5" text="Optional emoji or image to use as the icon. Even if no icon is desired, an empty value is still required as input." x="162.351606167058" y="1175.29704060972" />
+    <Dynamo.Graph.Notes.NoteModel guid="9b11d8cd-3d34-41ae-8db2-4dceca827f57" text="This creates a webhook object. Once created, it can be used as input to Webhook.Post nodes." x="556.851606167058" y="906.297040609721" />
+    <Dynamo.Graph.Notes.NoteModel guid="ef91ab9f-d22c-41b5-9fec-e959ad349c0f" text="This node submits the supplied text to the supplied Webhook. Each Webhook.Post node will post a separate message even if using the same Webhook." x="947.351606167058" y="1005.29704060972" />
+    <Dynamo.Graph.Notes.NoteModel guid="de268657-5a73-4442-8e75-36137911fd39" text="If Slack has received the message and was able to process it, the respose will be &quot;ok&quot;. Anything else means it has failed." x="1340.35160616706" y="1005.29704060972" />
+    <Dynamo.Graph.Notes.NoteModel guid="74ac99dc-79fa-463d-9a90-92d82c7e63a7" text="The text to submit through the Webhook" x="556.851606167058" y="1172.79704060972" />
+  </Notes>
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>
