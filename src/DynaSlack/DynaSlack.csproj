@@ -159,7 +159,7 @@
     <RemoveDir Directories="$(ProjectVarName)\bin" />
     <RemoveDir Directories="$(ProjectVarName)\obj" />
   </Target>
-<!-- Dynamo Package -->
+  <!-- Dynamo Package -->
   <Target Name="AfterBuild">
     <ItemGroup>
       <Dlls Include="$(OutDir)*.dll" />
