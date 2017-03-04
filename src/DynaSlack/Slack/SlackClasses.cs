@@ -129,8 +129,13 @@ namespace Slack
             payload.Emoji = this.icon_emoji;
             payload.Icon = this.icon_url;
 
-            // encode payload as JSON
+            // encode payload as JSON and POST it
             string jsonPayload = JsonConvert.SerializeObject(payload);
+            string response = Web.Request.POST(this.url, jsonPayload);
+
+            // validate response
+            if (String.IsNullOrEmpty(response)) throw new Exception("Slack servers returned an error.");
+            if (response.Trim().Contains("<html")) throw new Exception("Slack returned an error : please check the webhook URL.");
 
             // POST the message and return the server response
             return Web.Request.POST(this.url, jsonPayload);
