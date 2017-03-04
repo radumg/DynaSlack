@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DynaSlack.Slack
+namespace Slack
 {
     /// <summary>
     /// Slack clients represent a single connection to a Slack team, with all associated properties and methods.
@@ -12,7 +12,7 @@ namespace DynaSlack.Slack
         public string team { get; set; }
 
         // Webhooks and Bots are client-specific, so you could have different clients with different settings.
-        public IncomingWebhook webhook { get; set; }
+        public Webhook webhook { get; set; }
         Bot bot { get; set; }
 
         /// <summary>
@@ -33,11 +33,10 @@ namespace DynaSlack.Slack
         /// Post a message using the client webhook
         /// </summary>
         /// <param name="text">The text to send</param>
-        /// <param name="emoji">The emoji to use as image. Uses Slack syntax, example :ghost: </param>
         /// <returns>The message JSON payload</returns>
         public string PostWebhookMessage(string text, string emoji = null)
         {
-            return this.webhook.Post(text, emoji);
+            return this.webhook.Post(text);
         }
 
         /// <summary>

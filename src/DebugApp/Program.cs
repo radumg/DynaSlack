@@ -1,5 +1,5 @@
 ﻿using System;
-using DynaSlack.Slack;
+using Slack;
 
 /// <summary>
 /// Namespace used to host classes and methods used during debugging only, in the absence of proper unit tests
@@ -12,12 +12,12 @@ namespace DynaSlack.DebugApp
         private static void Main(string[] args)
         {
             // build a new Webhook object
-            var webhook = new IncomingWebhook(
+            var webhook = new Webhook(
                 "https://hooks.slack.com/services/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 ",
                 "apitestground");
 
             // build a new Slack client object
-            var slackClient = new DynaSlack.Slack.Client();
+            var slackClient = new Slack.Client();
             slackClient.webhook = webhook;
 
             // read a line from the console

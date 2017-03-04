@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft;
-using DynaSlack.Web;
+using Web;
 
 /// <summary>
 /// Namespace holds classes that are used to represent Slack entities
 /// The below classes follow the Slack API structure, see https://api.slack.com/docs/
 /// </summary>
-namespace DynaSlack.Slack
+namespace Slack
 {
     /// <summary>
     /// Class represents a Slack message.
@@ -75,26 +75,38 @@ namespace DynaSlack.Slack
     /// <summary>
     /// Class represents an Incoming Webhook connection in Slack
     /// </summary>
-    public class IncomingWebhook
+    public class Webhook
     {
         public string url { get; set; }
         public string channel { get; set; }
         public string username { get; set; }
+        public string icon_emoji { get; set; }
+        public string icon_url { get; set; }
         public string channel_id { get; set; }
         public string configuration_url { get; set; }
 
         /// <summary>
-        /// Webhook class constructor
+        /// Create a webhook for use with Slack.
         /// </summary>
         /// <param name="Url">The URL to send data to</param>
         /// <param name="Channel">The Slack channel to post to</param>
         /// <param name="User">The name of the user to post as</param>
-        public IncomingWebhook(string Url, string Channel, string User = null)
+        /// <param name="EmojiIcon">The emoji to use as icon. Uses Slack syntax, like :ghost: or :rocket:</param>
+        /// <param name="UrlIcon">An URL to an image to use as the icon.</param>
+        public Webhook(string Url, string Channel, string User = null, string EmojiIcon = null, string UrlIcon = null)
         {
-            this.url = Url;
-            this.channel = Channel;
+            // check URL
+            if (!String.IsNullOrEmpty(Url) && Web.Helpers.checkURI(new Uri(Url))) this.url = Url;
+            else throw new Exception("Invalid webhook URL");
+
+            // check channel & username
+            if (!String.IsNullOrEmpty(Channel)) this.channel = Channel;
             if (!this.channel.StartsWith("#")) this.channel = "#" + this.channel;
             if (User != null) username = User;
+
+            // check emoji & icon URL
+            if (!String.IsNullOrEmpty(EmojiIcon)) this.icon_emoji = EmojiIcon;
+            if (!String.IsNullOrEmpty(UrlIcon) && Web.Helpers.checkURI(new Uri(UrlIcon))) this.icon_url = UrlIcon;
         }
 
         /// <summary>
@@ -102,30 +114,31 @@ namespace DynaSlack.Slack
         /// </summary>
         /// <param name="webhook">Specify a webhook object to use. If nothing is supplied, it defaults to the Client's webhook.</param>
         /// <param name="text">The text to send</param>
-        /// <param name="emoji">The emoji to use as image. Uses Slack syntax, example :ghost: </param>
-        /// <param name="icon">URL to an image to use as image. If an emoji is specified, this is disregarded.</param>
         /// <returns>The message JSON payload</returns>
-        public string Post(string text, string emoji = null, string icon = null)
+        public string Post(string text)
         {
             // TODO : implement & refactor using webhook posting factory
             // perform checks before encoding objects
-            if (text == null || text == String.Empty) return null;
-            if (!emoji.StartsWith(":") && emoji != null) emoji = ":" + emoji;
-            if (!emoji.EndsWith(":") && emoji != null) emoji = emoji + ":";
+            if (String.IsNullOrEmpty(text)) return null;
 
             // build payload
             SlackPayload payload = new SlackPayload();
             payload.Channel = this.channel;
             payload.Username = this.username;
             payload.Text = text;
-            if (emoji != null) payload.Emoji = emoji;
-            else if (icon != null && DynaSlack.Web.Helpers.checkURI(new Uri(icon))) payload.Icon = icon;
+            payload.Emoji = this.icon_emoji;
+            payload.Icon = this.icon_url;
 
-            // encode payload as JSON
+            // encode payload as JSON and POST it
             string jsonPayload = JsonConvert.SerializeObject(payload);
+            string response = Web.Request.POST(this.url, jsonPayload);
+
+            // validate response
+            if (String.IsNullOrEmpty(response)) throw new Exception("Slack servers returned an error.");
+            if (response.Trim().Contains("<html")) throw new Exception("Slack returned an error : please check the webhook URL.");
 
             // POST the message and return the server response
-            return DynaSlack.Web.Request.POST(this.url, jsonPayload);
+            return Web.Request.POST(this.url, jsonPayload);
 
             // TODO : deserialise server response to the SlackResponse class instead of returning string
             // var serialiser = new Newtonsoft.Json.JsonSerializer();

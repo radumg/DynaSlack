@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net;
 using System.Collections.Specialized;
-using DynaSlack.Slack;
+using Slack;
 
-namespace DynaSlack.Web
+namespace Web
 {
     /// <summary>
     /// Utility class used to construct a web request and send it
@@ -24,7 +24,7 @@ namespace DynaSlack.Web
         protected internal static string POST(string url, string jsonPayload)
         {
             // check URL to post to is valid before moving on
-            if (!DynaSlack.Web.Helpers.checkURI(new Uri(url))) return null;
+            if (!Web.Helpers.checkURI(new Uri(url))) return null;
 
             // the encoding is standardised and necessary for deserialisation.
             Encoding _encoding = new UTF8Encoding();
@@ -66,10 +66,10 @@ namespace DynaSlack.Web
         public string scope { get; set; }
 
         // bots
-        public Bot bot;
+        Bot bot;
 
         // incoming webhook
-        public IncomingWebhook incoming_webhook;
+        public Webhook incoming_webhook;
 
         // user info
         public string url { get; set; }
