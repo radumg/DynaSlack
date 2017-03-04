@@ -34,7 +34,7 @@ The result of this will show up Slack as below :
 ![simple](https://cloud.githubusercontent.com/assets/11439624/23580576/4d820cd4-00fc-11e7-8265-020ca0bfaf04.PNG)
 
 ## More complex example
-The `samples` folder includes a simple example that shows you how to post a message using webhooks. 
+The `samples` folder includes a more complex example that shows you how to post 2 separate messages using 2 differently configured webhooks that have different names and different icons. One of the webhooks makes use of an `emoji` icon whilst the other uses a cloud-hosted `image`. 
 
 The definition is pictured below :
 ![samples-postmessageswithicons](https://cloud.githubusercontent.com/assets/11439624/23580571/34206bc8-00fc-11e7-8f7b-469a9cc9f61c.png)
