@@ -1,4 +1,4 @@
-# Dynaslack
+# Dynaslack  [![Build Status](https://travis-ci.org/radumg/DynaSlack.svg?branch=master)](https://travis-ci.org/radumg/DynaSlack)
 
 [Dynamo](http://www.dynamobim.org) package providing integration with Slack, allowing you to post messages to [Slack](http://www.slack.com), currently via webhooks only.
 
