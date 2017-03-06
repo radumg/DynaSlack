@@ -1,0 +1,13 @@
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\bin\Release\DynaSlack.dll
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\bin\Release\DynaSlack.pdb
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\bin\Release\DynamoServices.dll
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\bin\Release\Newtonsoft.Json.dll
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\bin\Release\RestSharp.dll
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\bin\Release\Newtonsoft.Json.xml
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\bin\Release\RestSharp.xml
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\obj\Release\DynaSlack.csprojResolveAssemblyReference.cache
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\obj\Release\DynaSlack.g.resources
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\obj\Release\DynaSlack.Properties.Resources.resources
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\obj\Release\DynaSlack.csproj.GenerateResource.Cache
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\obj\Release\DynaSlack.dll
+C:\Users\radug\Documents\GitHub\DynaSlack\src\DynaSlack\obj\Release\DynaSlack.pdb
