@@ -1,5 +1,5 @@
 # DynaSlack  
-[![Build Status](https://travis-ci.org/radumg/DynaSlack.svg?branch=master)](https://travis-ci.org/radumg/DynaSlack) [![GitHub version](https://badge.fury.io/gh/radumg%2FDynaSlack.svg)](https://badge.fury.io/gh/radumg%2FDynaSlack) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/radumg/DynaSlack)
+[![Build Status](https://travis-ci.org/radumg/DynaSlack.svg?branch=master)](https://travis-ci.org/radumg/DynaSlack) [![GitHub version](https://badge.fury.io/gh/radumg%2FDynaSlack.svg)](https://badge.fury.io/gh/radumg%2FDynaSlack) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/radumg/DynaSlack/blob/master/CONTRIBUTING.md)
 ---
 **DynaSlack** is a [Dynamo](http://www.dynamobim.org) package providing integration with Slack, allowing you to post messages to [Slack](http://www.slack.com), currently via webhooks only.
 
