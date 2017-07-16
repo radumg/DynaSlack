@@ -17,7 +17,7 @@ namespace Slack.Client
         public Webhook webhook { get; set; }
         public Bot bot { get; set; }
 
-        public readonly string BaseUrl = "https://app.asana.com/api/1.0/";
+        public readonly string BaseUrl = "https://slack.com/api/";
         public string JsonTokenOverride { get; set; }
 
         internal RestClient restClient;
@@ -28,18 +28,13 @@ namespace Slack.Client
         /// </summary>
         /// <param name="token">Optional OAuth token. If not supplied or invalid, posting will only be available as bots or webhooks.</param>
         /// <param name="webhook">Optional webhook override. If supplied, this will be used instead of OAuth webhook.</param>
-        public SlackClient(string token = null, Webhook webhook = null)
+        public SlackClient(string token = null)
         {
             if (!CheckToken(token))
                 this.token = null;
             else
-            {
                 this.token = token;
                 // TODO : implement Slack's /api/check/ endpoint to test token is actually valid
-            }
-            // check if there is an override on the webhook
-            if (webhook != null)
-                this.webhook = webhook;
         }
 
         /// <summary>

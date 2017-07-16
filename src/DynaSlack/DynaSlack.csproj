@@ -99,6 +99,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Helpers.Web.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -117,7 +118,6 @@
     <Compile Include="Slack\Classes\Webhook.cs" />
     <Compile Include="Slack\Requests\SlackRequest.cs" />
     <Compile Include="Slack\Requests\SlackResponse.cs" />
-    <Compile Include="Helpers\Web.cs" />
     <Compile Include="Slack\Classes\Field.cs" />
     <Compile Include="Slack\Client\SlackClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -79,7 +79,7 @@ namespace Slack
 
             this.restRequest = new RestRequest();
             this.restRequest.AddHeader("Authorization", client.token);
-            this.restRequest.AddHeader("content-type", "application/x-www-form-urlencoded");
+            this.restRequest.AddHeader("content-type", "application/json");
 
             /// The following headers are not required by useful.
             /// cache-control encourages system not to cache requests and fetch new results every time

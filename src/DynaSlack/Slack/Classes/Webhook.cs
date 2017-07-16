@@ -31,7 +31,7 @@ namespace Slack
         public Webhook(string Url, string Channel = "general", string User = "DynaSlack", string EmojiIcon = null, string UrlIcon = null)
         {
             // check URL
-            if (!String.IsNullOrEmpty(Url) && Web.Helpers.checkURI(new Uri(Url)))
+            if (!String.IsNullOrEmpty(Url) && Slack.Helpers.Web.checkURI(new Uri(Url)))
                 this.url = Url;
             else
                 throw new Exception("Invalid webhook URL");
@@ -47,7 +47,7 @@ namespace Slack
             // check emoji & icon URL
             if (!String.IsNullOrEmpty(EmojiIcon))
                 this.icon_emoji = EmojiIcon;
-            if (!String.IsNullOrEmpty(UrlIcon) && Web.Helpers.checkURI(new Uri(UrlIcon)))
+            if (!String.IsNullOrEmpty(UrlIcon) && Slack.Helpers.Web.checkURI(new Uri(UrlIcon)))
                 this.icon_url = UrlIcon;
         }
 
@@ -71,11 +71,13 @@ namespace Slack
             payload.Icon = this.icon_url;
 
             // encode payload as JSON and POST it
-            string jsonPayload = JsonConvert.SerializeObject(payload);
-            string response = SlackRequest.POST(this.url, jsonPayload);
+            var request = new SlackRequest(client, RestSharp.Method.POST, this.url);
+            request.restRequest.AddJsonBody(payload);
+            var response = request.Execute<SlackResponse>(client);
 
             // validate response
-            if (String.IsNullOrEmpty(response))
+            if(Slack.Helpers.Web.ServerReturnedSuccessfulResponse())
+            if (String.IsNullOrEmpty(response.))
                 throw new Exception("Slack servers returned an error.");
             if (response.Trim().Contains("<html"))
                 throw new Exception("Slack could not process the request : please check the webhook URL.");

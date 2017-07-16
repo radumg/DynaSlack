@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Slack.Client;
 
 /// <summary>
 /// The below classes follow the Slack API structure, see https://api.slack.com/docs/
@@ -36,7 +37,7 @@ namespace Slack
         /// Posts the message to Slack on behalf of the Slack Client's user. Requires a valid OAuth token in Client.
         /// </summary>
         /// <returns></returns>
-        public string Post(Client slackClient)
+        public string Post(SlackClient slackClient)
         {
             string response = null;
 

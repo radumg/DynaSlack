@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft;
-using Web;
 
 /// <summary>
 /// The below classes follow the Slack API structure, see https://api.slack.com/docs/
