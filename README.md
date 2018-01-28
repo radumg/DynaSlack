@@ -1,6 +1,7 @@
 # DynaSlack  
 [![Build Status](https://travis-ci.org/radumg/DynaSlack.svg?branch=master)](https://travis-ci.org/radumg/DynaSlack) [![GitHub version](https://badge.fury.io/gh/radumg%2FDynaSlack.svg)](https://badge.fury.io/gh/radumg%2FDynaSlack) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/radumg/DynaSlack/blob/master/CONTRIBUTING.md)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c8f8b868c11041748a763c69dc92cf7c)](https://www.codacy.com/app/radugidei/DynaSlack?utm_source=github.com&utm_medium=referral&utm_content=radumg/DynaSlack&utm_campaign=badger)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fradumg%2FDynaSlack.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fradumg%2FDynaSlack?ref=badge_shield)
 ---
 **DynaSlack** is a [Dynamo](http://www.dynamobim.org) package providing integration with Slack, allowing you to post messages to [Slack](http://www.slack.com), currently via webhooks only.
 
@@ -180,6 +181,9 @@ See also the list of [contributors](https://github.com/radumg/DynaSlack/contribu
 ## License
 
 This project is licensed under the GNU AGPL 3.0 License - see the [LICENSE FILE](https://github.com/radumg/DynaSlack/blob/master/LICENSE) for details.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fradumg%2FDynaSlack.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fradumg%2FDynaSlack?ref=badge_large)
 
 ## Acknowledgments
 
